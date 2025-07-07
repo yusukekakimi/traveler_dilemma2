@@ -1,0 +1,29 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+    <table class=table style='width: auto'>
+        <tr>
+            <td>あなたの要求</td>
+            <td>{{ player.claim }}</td>
+        </tr>
+        <tr>
+            <td>他の旅人の要求</td>
+            <td>{{ other_player_claim }}</td>
+        </tr>
+        <tr>
+            <td>勝利した要求 (i.e. lower claim)</td>
+            <td>{{ group.lower_claim }}</td>
+        </tr>
+        <tr>
+            <td>あなたの調整額</td>
+            <td>{{ player.adjustment }}</td>
+        </tr>
+        <tr>
+            <td>最終的なあなたの利得</td>
+            <td>{{ player.payoff }}</td>
+        </tr>
+
+    </table>
+
+    <p>{{ next_button }}</p>
+    {{ include_sibling 'instructions.html' }}
+{{ endblock }}
